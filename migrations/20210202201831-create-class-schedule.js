@@ -9,10 +9,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       schedule_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "schedules",
+          key: "id"
+        }
       },
       class_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "classes",
+          key: "id"
+        }
       },
       day: {
         type: Sequelize.STRING

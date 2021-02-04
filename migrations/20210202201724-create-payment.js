@@ -9,10 +9,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       membership_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "memberships",
+          key: "id"
+        }
       },
       client_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "clients",
+          key: "id"
+        }
       },
       amount: {
         type: Sequelize.FLOAT
